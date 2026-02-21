@@ -19,9 +19,9 @@ const Navigation = () => {
   ]
 
   const socialLinks = [
-    { name: "GitHub", href: "#", icon: Github },
-    { name: "LinkedIn", href: "#", icon: Linkedin },
-    { name: "Twitter", href: "#", icon: Twitter },
+    { name: "GitHub", href: "https://github.com/Manasseh2352", icon: Github },
+    { name: "LinkedIn", href: "https://linkedin.com/in/nathaniel-unachi-42a90b25b", icon: Linkedin },
+    { name: "Twitter", href: "https://x.com/ManassehUnachi", icon: Twitter },
   ]
 
   return (

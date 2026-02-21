@@ -22,7 +22,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Navigation />
-        <div className="main-content ml-[280px] pb-20 md:pb-0">
+        <div className="main-content ml-0 md:ml-[280px] pb-24 md:pb-0">
           <main>{children}</main>
           <Footer />
         </div>
