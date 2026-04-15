@@ -15,6 +15,7 @@ import {
   Award,
   Calendar,
   CheckCircle,
+  Instagram,
 } from "lucide-react"
 
 export default function Home() {
@@ -161,14 +162,14 @@ export default function Home() {
               animate={{ opacity: 1 }}
               transition={{ duration: 1, delay: 1 }}
             >
-              <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">
+              <a href="https://github.com/Manasseh2352" className="text-gray-400 hover:text-blue-400 transition-colors">
                 <Github className="w-6 h-6" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">
+              <a href="https://linkedin.com/in/nathaniel-unachi-42a90b25b" className="text-gray-400 hover:text-blue-400 transition-colors">
                 <Linkedin className="w-6 h-6" />
               </a>
               <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">
-                <Mail className="w-6 h-6" />
+                <Instagram className="w-6 h-6" />
               </a>
             </motion.div>
           </motion.div>
