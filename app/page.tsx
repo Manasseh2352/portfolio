@@ -168,7 +168,7 @@ export default function Home() {
               <a href="https://linkedin.com/in/nathaniel-unachi-42a90b25b" className="text-gray-400 hover:text-blue-400 transition-colors">
                 <Linkedin className="w-6 h-6" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">
+              <a href="https://www.instagram.com/mannirextech/" className="text-gray-400 hover:text-blue-400 transition-colors">
                 <Instagram className="w-6 h-6" />
               </a>
             </motion.div>
