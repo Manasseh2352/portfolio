@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { Home, User, Code, Briefcase, Mail, Github, Linkedin, Twitter, Menu, X } from "lucide-react"
+import ThemeToggle from "@/components/ThemeToggle"
 
 const Navigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -30,7 +31,7 @@ const Navigation = () => {
       <motion.nav
         initial={{ x: -280 }}
         animate={{ x: 0 }}
-        className="hidden md:flex fixed left-0 top-0 h-full w-[280px] bg-slate-900/95 backdrop-blur-md border-r border-white/10 z-50 flex-col"
+        className="hidden md:flex fixed left-0 top-0 h-full w-[280px] bg-white/90 dark:bg-slate-900/95 backdrop-blur-md border-r border-slate-900/10 dark:border-white/10 z-50 flex-col"
       >
         <div className="p-6">
           <Link
@@ -39,7 +40,7 @@ const Navigation = () => {
           >
             Nathaniel Unachi
           </Link>
-          <p className="text-gray-400 text-sm mt-2">Frontend Developer</p>
+          <p className="text-slate-500 dark:text-gray-400 text-sm mt-2">Frontend Developer</p>
         </div>
 
         <div className="flex-1 px-4">
@@ -53,8 +54,8 @@ const Navigation = () => {
                     href={item.href}
                     className={`flex items-center space-x-3 px-4 py-3 rounded-lg transition-all duration-200 group ${
                       isActive
-                        ? "bg-blue-500/20 text-blue-400 border border-blue-500/30"
-                        : "text-gray-300 hover:bg-white/5 hover:text-blue-400"
+                        ? "bg-blue-500/20 text-blue-600 dark:text-blue-400 border border-blue-500/30"
+                        : "text-slate-600 dark:text-gray-300 hover:bg-slate-900/[0.04] dark:hover:bg-white/5 hover:text-blue-600 dark:hover:text-blue-400"
                     }`}
                   >
                     <Icon className="w-5 h-5" />
@@ -69,7 +70,10 @@ const Navigation = () => {
           </ul>
         </div>
 
-        <div className="p-4 border-t border-white/10">
+        <div className="p-4 border-t border-slate-900/10 dark:border-white/10">
+          <div className="flex justify-center mb-4">
+            <ThemeToggle />
+          </div>
           <div className="flex justify-center space-x-4 mb-4">
             {socialLinks.map((social) => {
               const Icon = social.icon
@@ -77,7 +81,7 @@ const Navigation = () => {
                 <a
                   key={social.name}
                   href={social.href}
-                  className="p-2 text-gray-400 hover:text-blue-400 hover:bg-white/5 rounded-lg transition-colors"
+                  className="p-2 text-slate-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-slate-900/[0.04] dark:hover:bg-white/5 rounded-lg transition-colors"
                   aria-label={social.name}
                 >
                   <Icon className="w-4 h-4" />
@@ -85,7 +89,7 @@ const Navigation = () => {
               )
             })}
           </div>
-          <div className="text-center text-xs text-gray-500">© 2024 Nathaniel Unachi</div>
+          <div className="text-center text-xs text-slate-400 dark:text-gray-500">© 2024 Nathaniel Unachi</div>
         </div>
       </motion.nav>
 
@@ -93,7 +97,7 @@ const Navigation = () => {
       <motion.nav
         initial={{ y: 100 }}
         animate={{ y: 0 }}
-        className="md:hidden fixed bottom-0 left-0 right-0 bg-slate-900/95 backdrop-blur-md border-t border-white/10 z-50"
+        className="md:hidden fixed bottom-0 left-0 right-0 bg-white/90 dark:bg-slate-900/95 backdrop-blur-md border-t border-slate-900/10 dark:border-white/10 z-50"
       >
         <div className="flex justify-around items-center py-2">
           {navItems.slice(0, 4).map((item) => {
@@ -104,7 +108,7 @@ const Navigation = () => {
                 key={item.name}
                 href={item.href}
                 className={`flex flex-col items-center space-y-1 px-3 py-2 rounded-lg transition-all duration-200 ${
-                  isActive ? "text-blue-400" : "text-gray-400 hover:text-blue-400"
+                  isActive ? "text-blue-600 dark:text-blue-400" : "text-slate-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400"
                 }`}
               >
                 <Icon className="w-5 h-5" />
@@ -117,7 +121,7 @@ const Navigation = () => {
           })}
           <button
             onClick={() => setIsMobileMenuOpen(true)}
-            className="flex flex-col items-center space-y-1 px-3 py-2 rounded-lg text-gray-400 hover:text-blue-400 transition-colors"
+            className="flex flex-col items-center space-y-1 px-3 py-2 rounded-lg text-slate-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
           >
             <Menu className="w-5 h-5" />
             <span className="text-xs font-medium">More</span>
@@ -132,25 +136,28 @@ const Navigation = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="md:hidden fixed inset-0 bg-black/50 backdrop-blur-sm z-50"
+            className="md:hidden fixed inset-0 bg-slate-900/20 dark:bg-black/50 backdrop-blur-sm z-50"
             onClick={() => setIsMobileMenuOpen(false)}
           >
             <motion.div
               initial={{ y: "100%" }}
               animate={{ y: 0 }}
               exit={{ y: "100%" }}
-              className="absolute bottom-0 left-0 right-0 bg-slate-900/95 backdrop-blur-md border-t border-white/10 rounded-t-2xl"
+              className="absolute bottom-0 left-0 right-0 bg-white dark:bg-slate-900/95 backdrop-blur-md border-t border-slate-900/10 dark:border-white/10 rounded-t-2xl"
               onClick={(e) => e.stopPropagation()}
             >
               <div className="p-6">
                 <div className="flex justify-between items-center mb-6">
-                  <h3 className="text-lg font-semibold">Menu</h3>
-                  <button
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className="p-2 text-gray-400 hover:text-white rounded-lg"
-                  >
-                    <X className="w-5 h-5" />
-                  </button>
+                  <h3 className="text-lg font-semibold text-slate-900 dark:text-white">Menu</h3>
+                  <div className="flex items-center gap-3">
+                    <ThemeToggle />
+                    <button
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className="p-2 text-slate-500 dark:text-gray-400 hover:text-slate-900 dark:hover:text-white rounded-lg"
+                    >
+                      <X className="w-5 h-5" />
+                    </button>
+                  </div>
                 </div>
 
                 <div className="space-y-4 mb-6">
@@ -164,8 +171,8 @@ const Navigation = () => {
                         onClick={() => setIsMobileMenuOpen(false)}
                         className={`flex items-center space-x-3 px-4 py-3 rounded-lg transition-all duration-200 ${
                           isActive
-                            ? "bg-blue-500/20 text-blue-400 border border-blue-500/30"
-                            : "text-gray-300 hover:bg-white/5 hover:text-blue-400"
+                            ? "bg-blue-500/20 text-blue-600 dark:text-blue-400 border border-blue-500/30"
+                            : "text-slate-600 dark:text-gray-300 hover:bg-slate-900/[0.04] dark:hover:bg-white/5 hover:text-blue-600 dark:hover:text-blue-400"
                         }`}
                       >
                         <Icon className="w-5 h-5" />
@@ -175,7 +182,7 @@ const Navigation = () => {
                   })}
                 </div>
 
-                <div className="border-t border-white/10 pt-4">
+                <div className="border-t border-slate-900/10 dark:border-white/10 pt-4">
                   <div className="flex justify-center space-x-6">
                     {socialLinks.map((social) => {
                       const Icon = social.icon
@@ -183,7 +190,7 @@ const Navigation = () => {
                         <a
                           key={social.name}
                           href={social.href}
-                          className="p-3 text-gray-400 hover:text-blue-400 hover:bg-white/5 rounded-lg transition-colors"
+                          className="p-3 text-slate-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-slate-900/[0.04] dark:hover:bg-white/5 rounded-lg transition-colors"
                           aria-label={social.name}
                         >
                           <Icon className="w-5 h-5" />

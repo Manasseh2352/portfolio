@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:is(.dark *));
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -12,11 +14,9 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
-    --foreground: #ededed;
-  }
+.dark {
+  --background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+  --foreground: #ededed;
 }
 
 body {
@@ -27,26 +27,39 @@ body {
 
 /* Glass utility classes */
 @utility glass {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(15, 23, 42, 0.04);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(15, 23, 42, 0.08);
 }
 
 @utility glass-input {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(15, 23, 42, 0.04);
+  border: 1px solid rgba(15, 23, 42, 0.08);
   border-radius: 8px;
   padding: 12px 16px;
-  color: white;
+  color: #0f172a;
   width: 100%;
   transition: all 0.3s ease;
 }
 
 @utility glass-card {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(15, 23, 42, 0.04);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(15, 23, 42, 0.08);
   border-radius: 16px;
   padding: 24px;
   transition: all 0.3s ease;
+}
+
+/* Dark-mode overrides for the glass utilities */
+.dark .glass,
+.dark .glass-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.dark .glass-input {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: white;
 }

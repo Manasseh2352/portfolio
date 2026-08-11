@@ -11,34 +11,34 @@ export default function Projects() {
       title: "E-Commerce Storefront",
       description:
         "A modern, responsive e-commerce user interface built with Next.js and Tailwind CSS. Features dynamic product listings, shopping cart functionality, and a seamless checkout flow.",
-      image: "/placeholder.svg?height=300&width=500",
+      image: "/img/shulioo.png",
       tags: ["Next.js", "TypeScript", "Tailwind CSS", "React Context"],
       github: "#",
       live: "#",
       featured: false,
     },
     {
-      title: "Task Management Dashboard",
+      title: "No-Code Portfolio Builder",
       description:
         "An intuitive and interactive task management dashboard developed with React. Includes drag-and-drop task reordering, real-time updates, and customizable views for enhanced productivity.",
-      image: "/placeholder.svg?height=300&width=500",
-      tags: ["React", "Redux", "Framer Motion", "CSS Modules"],
+      image: "/img/shulioo.png",
+      tags: ["Next Js", "Redux", "Framer Motion", "Tailwind CSS"],
       github: "#",
-      live: "#",
+      live: "https://shulioo.com/",
       featured: true,
     },
     {
       title: "Interactive Data Visualization",
       description:
-        "A web application for visualizing complex datasets through interactive charts and graphs. Built using React and D3.js, providing a dynamic and insightful user experience.",
-      image: "/placeholder.svg?height=300&width=500",
-      tags: ["React", "D3.js", "SVG", "Data Fetching"],
+        "A web application for visualizing complex datasets through interactive charts and graphs. Built using Node.js, Express.js and D3.js, providing a dynamic and insightful user experience.",
+      image: "/img/data.png",
+      tags: ["Node js", "Express", "Chart Js", "Docker"],
       github: "#",
       live: "#",
       featured: true,
     },
     {
-      title: "Weather Forecast App",
+      title: "WeathApp",
       description:
         "A responsive weather application providing real-time forecasts and detailed weather information based on user location. Features dynamic backgrounds and smooth transitions.",
       image: "/placeholder.svg?height=300&width=500",
